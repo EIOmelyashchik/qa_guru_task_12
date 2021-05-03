@@ -19,10 +19,6 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class DriverHelper {
     private static final DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class, System.getProperties());
 
-    public static String getBaseUrl() {
-        return driverConfig.baseUrl();
-    }
-
     public static String getWebMobile() {
         return driverConfig.webBrowserMobileView();
     }
@@ -77,7 +73,6 @@ public class DriverHelper {
     public static void configureDriver() {
         addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.baseUrl = driverConfig.baseUrl();
         Configuration.browser = driverConfig.webBrowser();
         Configuration.browserVersion = driverConfig.webBrowserVersion();
         Configuration.browserSize = driverConfig.webBrowserSize();

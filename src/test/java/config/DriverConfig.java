@@ -5,13 +5,9 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/local_driver.properties",
-        "classpath:config/remote_driver1.properties"
+        "classpath:config/${driver}.properties"
 })
 public interface DriverConfig extends Config {
-
-    @Key("base.url")
-    String baseUrl();
 
     @Key("web.remote.driver.url")
     String webRemoteDriverUrl();

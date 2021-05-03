@@ -15,14 +15,15 @@ import static io.qameta.allure.Allure.step;
 
 @DisplayName("Verify titles on pages")
 public class SimpleTests extends TestBase {
+    private final String baseUrl = "https://www.google.com";
 
     @Test
     @Owner("omelyashchik")
     @Feature("Search")
     @DisplayName("Verify search result")
     void checkTitleBlogPage() {
-        step("Open " + DriverHelper.getBaseUrl(), () ->
-                open("/"));
+        step("Open " + baseUrl, () ->
+                open(baseUrl));
 
         step("Search 'lviggiano/owner'", () ->
                 $(byName("q")).setValue("lviggiano/owner").pressEnter());
